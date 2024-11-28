@@ -42,7 +42,7 @@ const Navbar = () => {
     }, [navLinks]);
 
     return (
-        <nav className="bg-white shadow fixed w-full z-10">
+        <nav className="bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 shadow fixed w-full z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     {/* Logo */}
@@ -57,11 +57,10 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`ml-6 ${
-                                    activeSection === link.href
+                                className={`ml-6 ${activeSection === link.href
                                         ? 'text-blue-500 underline underline-offset-4'
                                         : 'text-gray-700'
-                                } hover:text-blue-500 transition duration-300`}
+                                    } hover:text-blue-500 transition duration-300`}
                             >
                                 {link.name}
                             </a>
@@ -112,11 +111,10 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                                    activeSection === link.href
+                                className={`block px-3 py-2 rounded-md text-base font-medium ${activeSection === link.href
                                         ? 'text-blue-500 underline underline-offset-4'
                                         : 'text-gray-700'
-                                } hover:text-blue-500 transition duration-300`}
+                                    } hover:text-blue-500 transition duration-300`}
                             >
                                 {link.name}
                             </a>

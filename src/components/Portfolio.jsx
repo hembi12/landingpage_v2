@@ -27,7 +27,7 @@ const projects = [
 
 const Portfolio = () => {
     return (
-        <section id="portfolio" className="bg-white py-20">
+        <section id="portfolio" className="bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 py-20">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">

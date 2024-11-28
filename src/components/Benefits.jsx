@@ -25,7 +25,7 @@ const benefits = [
 
 const Benefits = () => {
     return (
-        <section id="benefits" className="bg-gray-100 py-20">
+        <section id="benefits" className="bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500 py-20">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">

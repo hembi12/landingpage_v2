@@ -4,7 +4,7 @@ import AboutImage from '../assets/images/About.svg'; // Importa la imagen local
 
 const About = () => {
     return (
-        <section id="about" className="bg-white py-20">
+        <section id="about" className="bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 py-20">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
                 {/* Texto */}
                 <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">

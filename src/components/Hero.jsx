@@ -4,7 +4,7 @@ import HeroImage from '../assets/images/Hero.svg'; // Importa la imagen local
 
 const HeroSection = () => {
     return (
-        <section id="hero" className="bg-gray-100">
+        <section id="hero" className="bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500">
             <div className="max-w-7xl mx-auto px-4 py-20 flex flex-col-reverse md:flex-row items-center">
                 {/* Texto y CTA */}
                 <div className="w-full md:w-1/2 text-center md:text-center">
