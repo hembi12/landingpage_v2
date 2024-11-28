@@ -1,14 +1,15 @@
-// src/components/Navbar.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('#hero'); // Sección activa predeterminada
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
     };
 
-    const navLinks = [
+    // Usamos useMemo para estabilizar la referencia de navLinks
+    const navLinks = useMemo(() => [
         { name: 'Inicio', href: '#hero' },
         { name: 'Acerca de', href: '#about' },
         { name: 'Servicios', href: '#services' },
@@ -18,7 +19,27 @@ const Navbar = () => {
         { name: 'Reseñas', href: '#testimonials' },
         { name: 'FAQ', href: '#faq' },
         { name: 'Contáctanos', href: '#contact' },
-    ];
+    ], []);
+
+    // Actualizar la sección activa según el desplazamiento
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentSection = navLinks.find((link) => {
+                const section = document.querySelector(link.href);
+                if (!section) return false;
+                const offsetTop = section.offsetTop - 100; // Ajuste para compensar el navbar
+                const offsetBottom = offsetTop + section.offsetHeight;
+                const scrollPosition = window.scrollY;
+                return scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+            });
+            if (currentSection) {
+                setActiveSection(currentSection.href);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [navLinks]);
 
     return (
         <nav className="bg-white shadow fixed w-full z-10">
@@ -36,7 +57,11 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="ml-6 text-gray-700 hover:text-blue-500 transition duration-300"
+                                className={`ml-6 ${
+                                    activeSection === link.href
+                                        ? 'text-blue-500 underline underline-offset-4'
+                                        : 'text-gray-700'
+                                } hover:text-blue-500 transition duration-300`}
                             >
                                 {link.name}
                             </a>
@@ -87,7 +112,11 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition duration-300"
+                                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                                    activeSection === link.href
+                                        ? 'text-blue-500 underline underline-offset-4'
+                                        : 'text-gray-700'
+                                } hover:text-blue-500 transition duration-300`}
                             >
                                 {link.name}
                             </a>
