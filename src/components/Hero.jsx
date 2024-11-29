@@ -1,5 +1,5 @@
-// src/components/HeroSection.jsx
 import React from 'react';
+import { Parallax } from 'react-scroll-parallax'; // Importamos Parallax
 import HeroImage from '../assets/images/Home.svg'; // Importa la imagen local
 
 const HeroSection = () => {
@@ -31,13 +31,15 @@ const HeroSection = () => {
                         </a>
                     </div>
                 </div>
-                {/* Imagen o Gráfico */}
+                {/* Imagen con Parallax */}
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
-                    <img
-                        src={HeroImage} // Usa la imagen importada
-                        alt="Diseño Web Profesional"
-                        className="w-full h-auto"
-                    />
+                    <Parallax speed={-10}>
+                        <img
+                            src={HeroImage}
+                            alt="Diseño Web Profesional"
+                            className="w-full h-auto"
+                        />
+                    </Parallax>
                 </div>
             </div>
         </section>
