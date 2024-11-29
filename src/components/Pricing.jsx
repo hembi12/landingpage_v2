@@ -39,13 +39,13 @@ const plans = [
 
 const Pricing = () => {
     return (
-        <section id="pricing" className="bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 py-20">
+        <section id="pricing" className="bg-gradient-to-b from-blue-200 via-blue-300 to-blue-400 py-20">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+                    <h2 className="text-3xl md:text-4xl font-semibold text-blue-950 mb-4">
                         Precios
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-blue-950">
                         Elige el plan que mejor se adapte a tus necesidades.
                     </p>
                 </div>
@@ -53,28 +53,28 @@ const Pricing = () => {
                     {plans.map((plan) => (
                         <div
                             key={plan.id}
-                            className={`p-6 rounded-lg shadow-lg transition-transform duration-300 ${
-                                plan.highlighted ? 'bg-blue-100 transform scale-105' : 'bg-gray-100'
+                            className={`bg-white bg-clip-padding backdrop-filter backdrop-blur bg-opacity-90 backdrop-saturate-100 backdrop-contrast-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 ${
+                                plan.highlighted ? 'bg-yellow-400 transform scale-105' : 'bg-gray-100'
                             }`}
                         >
-                            <h3 className="text-xl font-semibold text-gray-800 text-center mb-4">
+                            <h3 className="text-xl font-semibold text-blue-950 text-center mb-4">
                                 {plan.title}
                             </h3>
-                            <p className="text-3xl font-bold text-gray-800 text-center mb-4">
+                            <p className="text-3xl font-bold text-blue-950 text-center mb-4">
                                 {plan.price}
                             </p>
-                            <ul className="text-gray-600 mb-6">
+                            <ul className="text-blue-600 mb-6">
                                 {plan.features.map((feature, index) => (
                                     <li key={index} className="flex items-center mb-2">
-                                        <span className="mr-2 text-blue-500">✓</span>
+                                        <span className="mr-2 text-blue-600">✓</span>
                                         {feature}
                                     </li>
                                 ))}
                             </ul>
                             <div className="text-center">
                                 <button
-                                    className={`px-6 py-3 rounded-md text-white font-medium ${
-                                        plan.highlighted ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-800 hover:bg-gray-900'
+                                    className={`px-6 py-3 rounded-md text-white font-bold shadow-lg ${
+                                        plan.highlighted ? 'bg-blue-600 hover:bg-blue-500' : 'bg-amber-400 hover:bg-amber-300 text-blue-950'
                                     } transition`}
                                 >
                                     Elegir Plan

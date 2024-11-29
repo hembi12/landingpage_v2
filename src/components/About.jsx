@@ -1,48 +1,58 @@
-// src/components/About.jsx
 import React from 'react';
-import AboutImage from '../assets/images/About.svg'; // Importa la imagen local
+import { FaBullseye, FaEye, FaHandsHelping } from 'react-icons/fa'; // Íconos para misión, visión y valores
+
+const aboutCards = [
+    {
+        id: 1,
+        icon: <FaBullseye className="text-blue-800 w-12 h-12 mb-4" aria-hidden="true" />,
+        title: 'Nuestra Misión',
+        description: 'Proporcionar servicios de desarrollo web de alta calidad que ayuden a nuestros clientes a alcanzar sus objetivos comerciales.',
+    },
+    {
+        id: 2,
+        icon: <FaEye className="text-blue-800 w-12 h-12 mb-4" aria-hidden="true" />,
+        title: 'Nuestra Visión',
+        description: 'Ser líderes en la industria de desarrollo web, reconocidos por nuestra innovación, integridad y compromiso con la excelencia.',
+    },
+    {
+        id: 3,
+        icon: <FaHandsHelping className="text-blue-800 w-12 h-12 mb-4" aria-hidden="true" />,
+        title: 'Nuestros Valores',
+        description: 'Innovación, calidad, integridad, trabajo en equipo y orientación al cliente son los pilares de nuestro trabajo.',
+    },
+];
 
 const About = () => {
     return (
-        <section id="about" className="bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 py-20">
-            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
-                {/* Texto */}
-                <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+        <section id="about" className="bg-gradient-to-b from-blue-200 via-blue-300 to-blue-400 py-20">
+            <div className="max-w-7xl mx-auto px-4">
+                {/* Título y Descripción */}
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-semibold text-blue-950 mb-4">
                         Acerca de Nosotros
                     </h2>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-blue-950">
                         En [Nombre de Tu Empresa], nos dedicamos a crear soluciones web innovadoras que impulsan el crecimiento de tu negocio. Nuestro equipo de expertos está comprometido con la excelencia y la satisfacción del cliente.
                     </p>
-                    <div className="mt-6">
-                        {/* Misión */}
-                        <h3 className="text-2xl font-semibold text-gray-700 mb-2">Nuestra Misión</h3>
-                        <p className="text-gray-600 mb-4">
-                            Proporcionar servicios de desarrollo web de alta calidad que ayuden a nuestros clientes a alcanzar sus objetivos comerciales.
-                        </p>
-                        {/* Visión */}
-                        <h3 className="text-2xl font-semibold text-gray-700 mb-2">Nuestra Visión</h3>
-                        <p className="text-gray-600 mb-4">
-                            Ser líderes en la industria de desarrollo web, reconocidos por nuestra innovación, integridad y compromiso con la excelencia.
-                        </p>
-                        {/* Valores */}
-                        <h3 className="text-2xl font-semibold text-gray-700 mb-2">Nuestros Valores</h3>
-                        <ul className="list-disc list-inside text-gray-600">
-                            <li>Innovación</li>
-                            <li>Calidad</li>
-                            <li>Integridad</li>
-                            <li>Trabajo en Equipo</li>
-                            <li>Orientación al Cliente</li>
-                        </ul>
-                    </div>
                 </div>
-                {/* Imagen */}
-                <div className="w-full md:w-1/2">
-                    <img
-                        src={AboutImage}
-                        alt="Espacio de Trabajo"
-                        className="w-full h-auto"
-                    />
+                {/* Tarjetas de Misión, Visión y Valores */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {aboutCards.map((card) => (
+                        <div key={card.id} className="bg-white bg-clip-padding backdrop-filter backdrop-blur bg-opacity-80 backdrop-saturate-100 backdrop-contrast-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            {/* Ícono */}
+                            <div className="flex items-center justify-center">
+                                {card.icon}
+                            </div>
+                            {/* Título */}
+                            <h3 className="text-xl font-semibold text-blue-950 mb-2 text-center">
+                                {card.title}
+                            </h3>
+                            {/* Descripción */}
+                            <p className="text-blue-950 text-center">
+                                {card.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

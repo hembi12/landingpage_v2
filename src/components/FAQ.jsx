@@ -32,13 +32,13 @@ const FAQ = () => {
     };
 
     return (
-        <section id="faq" className="bg-gradient-to-b from-blue-100 via-blue-300 to-blue-500 py-20">
+        <section id="faq" className="bg-gradient-to-b from-blue-200 via-blue-300 to-blue-400 py-20">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+                    <h2 className="text-3xl md:text-4xl font-semibold text-blue-950 mb-4">
                         Preguntas Frecuentes
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-blue-950">
                         Resolvemos tus dudas más comunes.
                     </p>
                 </div>
@@ -46,21 +46,21 @@ const FAQ = () => {
                     {faqs.map((faq) => (
                         <div
                             key={faq.id}
-                            className="bg-gray-100 p-6 rounded-lg shadow-md transition"
+                            className="bg-white bg-clip-padding backdrop-filter backdrop-blur bg-opacity-80 backdrop-saturate-100 backdrop-contrast-100 p-6 rounded-lg shadow-md hover:shadow-xl transition"
                         >
                             <div
                                 className="flex justify-between items-center cursor-pointer"
                                 onClick={() => toggleFAQ(faq.id)}
                             >
-                                <h3 className="text-lg font-semibold text-gray-800">
+                                <h3 className="text-lg font-semibold text-blue-950">
                                     {faq.question}
                                 </h3>
-                                <span className="text-blue-500">
+                                <span className="text-blue-950">
                                     {activeId === faq.id ? '-' : '+'}
                                 </span>
                             </div>
                             {activeId === faq.id && (
-                                <p className="text-gray-600 mt-4">
+                                <p className="text-blue-950 mt-4">
                                     {faq.answer}
                                 </p>
                             )}
